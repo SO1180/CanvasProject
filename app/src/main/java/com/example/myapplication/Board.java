@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +10,7 @@ import android.view.View;
 
 public class Board extends View {
 
+    Bitmap bitmap;
     float x,y,r;
     float deltax, deltay;
     Paint p;
@@ -26,6 +29,8 @@ public class Board extends View {
         p.setColor(Color.BLUE);
         p.setStrokeWidth(12);
 
+        bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.bamba_snack);
+
     }
 
     @Override
@@ -35,6 +40,8 @@ public class Board extends View {
         canvas.drawCircle(x,y,r,p);
         x = x + deltax;
         y = y + deltay;
+
+        canvas.drawBitmap(bitmap,x - r,y - r,null);
 
         if(x<r || x>canvas.getWidth() - r)
             deltax = -deltax;
