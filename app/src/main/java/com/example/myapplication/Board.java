@@ -32,7 +32,7 @@ public class Board extends View {
         p.setStrokeWidth(12);
 
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bamba_snack);
-        bitmap = Bitmap.createScaledBitmap(bitmap, 200, 200, false);
+        bitmap = Bitmap.createScaledBitmap(bitmap, 300, 300, false);
 
     }
 
